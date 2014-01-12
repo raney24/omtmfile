@@ -1,0 +1,81 @@
+<html id="container">
+
+<script src="jquery.min.js"> </script>
+<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("p").hide();
+
+	var closeDiv = function(clicked, closeValues){ //define close function (closeValues are for original values)
+	
+		$(clicked).animate({
+			height:'31%',
+			width:'31%',
+			left:closeValues.left,
+			top:closeValues.top,
+			fontSize:'100%'
+			}, 1000, 
+				function() {
+					$(clicked).css('z-index', 1) //send clicked div back to same level as others
+				}
+		);	
+		$("p").fadeOut(1000);
+		
+		$(clicked).off('click');
+		
+		$(clicked).click(function(){
+			openDiv(clicked);
+		});
+	};	
+	var openDiv = function(clicked){ // open div function (clicked is div clicked)
+		
+		$(clicked).css("z-index", 2); //move clicked div over other divs
+		
+		var closeValues = { //closed values of left and top percentage
+			left:$(clicked).css('left'),
+			top:$(clicked).css('top')
+		};
+		
+		var contentID = "#" +$(clicked).attr('id');		
+		
+		$(clicked).animate({ //animation of open function
+			height:'97%',
+			width:'97%',
+			left:'0px',
+			top:'0px',
+			fontSize:'3em'
+		}, 1000);
+		$("p"+contentID).fadeIn(1000);
+		$("p"+contentID).animate({
+			fontSize:'3em'
+			}, 1000)
+		
+		$(clicked).click(function(){
+			closeDiv(clicked, closeValues); //call close div function for second click
+		});
+	};		
+
+	$("div.company-card").click(function(){
+		openDiv($(this));
+				
+	});
+});
+</script>	
+
+
+<body>
+	<div id="topLeft" class="company-card"><h1>Remix Education</h1><img src="Beta\remix.jpg" align="middle"><p class="hidden" id="topLeft">14 classes taught</p></div><br>
+	<div id="midLeft" class="company-card"><h1>Alliance Virtual Office</h1><img src="Beta\AVO.jpg"><p class="hidden" id="midLeft">Space</p></div><br>
+	<div id="botLeft" class="company-card"><h1>APAX Software, LLC</h1><img src="Beta\APAX.png"><p class="hidden" id="botLeft">revenue</p></div><br>
+	<div id="topCenter" class="company-card"><h1>Team Alpha</h1><img src="Beta\Team Alpha.jpg"><p class="hidden" id="topCenter">interns</p></div><br>
+	<div id="midCenter" class="company-card"><h1>Awesome Inc U</h1><img src="Beta\AINCU.jpg"><p class="hidden" id="midCenter">classes taught</p></div><br>
+	<div id="botCenter" class="company-card"><h1>TagaPet</h1><img src="Beta\tag a pet.png"><p class="hidden" id="botCenter">tags sold</p></div><br>
+	<div id="topRight" class="company-card"><h1>Done in 60 sec</h1><img src="Beta\done in 60.jpg"><p class="hidden" id="topRight">shows made</p></div><br>
+	<div id="midRight" class="company-card"><h1>Premiere Dance</h1><img src="Beta\prem dance.jpg"><p class="hidden" id="midRight">dances taught</p></div><br>
+	<div id="botRight" class="company-card"><h1>Control My ADHD</h1><img src="Beta\adhd.jpg"><p class="hidden" id="botRight">subsciptions sold</p></div><br>
+	
+	
+</body></html>
+
