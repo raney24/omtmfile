@@ -1,0 +1,120 @@
+div.company-card{
+	width:31%;
+	height:31%;
+	background-color:white;
+	
+}
+#container {
+	position:absolute;
+	width:99%;
+	height:99%;
+	background-color:red;
+	text-align:center;
+}
+div.textField {
+	position:absolute;
+	right:35%;
+	top:30%;
+	height:40%;
+	width:50%;
+	text-align:center;
+	background:#eeeeee;
+	vertical-align:middle;
+	line-height:150px;
+	font-size:2em;
+	z-index:4
+	
+}
+html, body {
+	max-height:100%;
+	max-width:100%;
+}
+.hidden {
+	position: absolute;
+	z-index: 5;
+	margin:20px 20px 20px 20px
+}
+.loaded {
+	position:absolute;
+	z-index:5;
+	margin:200px 200px 200px 200px;
+}
+p{
+	font-size:2em;
+}
+h1{
+	text-align:center;
+	margin:10px 10px 25px 5px;
+}
+img.company-card.arrow {
+	border:none;
+	border-radius:none;
+	height:25%;
+	width:20%;
+	top:32%;
+	left:0.8%;
+
+}
+img.company-card{
+	position:absolute;
+	left:35%;
+	top:30%;
+	height:30%;
+	width:30%;
+	border:solid black;
+	border-radius:18px;	
+}
+
+div.company-card {
+	position:absolute;
+	z-index:1;
+	margin:1% 1% 1% 1%;
+	border:2px;
+	border-radius:10px;
+	border-color:black;
+	border-style:solid;
+}
+img#footer{
+	position:absolute;
+	top:80%;
+	right:0;
+	height:20%;
+	width:100%;
+	
+}
+div#midLeft{
+    top:32%;
+    left:0%;
+}
+div#topLeft{
+    top:0%;
+    left:0%;
+}
+div#botLeft{
+    top:64%;
+    left:0%;
+}
+div#topCenter{
+	left:32%;
+	top:0%;
+}
+div#midCenter{
+    top:32%;
+    left:32%;
+}
+div#botCenter{
+    top:64%;
+    left:32%;
+}
+div#topRight{
+    top:0%;
+    left:64%;
+}
+div#midRight{
+    top:32%;
+    left:64%;
+}
+div#botRight{
+    top:64%;
+    left:64%;
+}
